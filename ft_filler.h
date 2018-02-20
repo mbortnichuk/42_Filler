@@ -15,6 +15,25 @@
 
 # include "libft/libft.h"
 
-
+typedef struct s_filler
+{
+	int		move_x;
+	int		move_y;
+	char	player;
+	char	enemy;
+	int		x_cord;
+	int		y_cord;
+	char	**map;
+	int		x_symbol;
+	int		y_symbol;
+	char	**symbol;
+	int		x_player;
+	int		y_player;
+	int		x_enemy;
+	int		y_enemy;
+	int		invalid;
+	int		ko;
+	int		alg;
+}				t_filler;
 
 #endif
