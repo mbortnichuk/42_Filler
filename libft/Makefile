@@ -77,6 +77,7 @@ SRCS = ft_atoi.c \
 	   ft_list_size.c \
 	   ft_swap_bits.c \
 	   ft_sqrt.c \
+	   ft_isnumber.c \
 	   get_next_line.c
 
 BINS = $(SRCS:.c=.o)

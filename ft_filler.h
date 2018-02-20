@@ -24,9 +24,9 @@ typedef struct s_fillergame
 	int		x_cord;
 	int		y_cord;
 	char	**map;
-	int		x_symbol;
-	int		y_symbol;
-	char	**symbol;
+	int		x_figure;
+	int		y_figure;
+	char	**figure;
 	int		x_player;
 	int		y_player;
 	int		x_enemy;
@@ -35,5 +35,9 @@ typedef struct s_fillergame
 	int		ko;
 	int		alg;
 }				t_fillergame;
+
+char	**ft_strnew_upd1(int x, int y);
+int		ft_take_symb(t_fillergame *sample, char *str);
+
 
 #endif

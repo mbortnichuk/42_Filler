@@ -102,6 +102,7 @@ void			ft_swap(int *a, int *b);
 int				ft_list_size(t_list *beginning);
 unsigned char	ft_swap_bits(unsigned char octet);
 int				ft_sqrt(int nb);
+int				ft_isnumber(char *str);
 
 int				get_next_line(const int fd, char **line);
 
