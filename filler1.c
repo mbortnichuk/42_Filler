@@ -52,3 +52,59 @@ int		ft_take_symb(t_fillergame *sample, char *str)
 	}
 	return (0);
 }
+
+void	ft_take_position(t_fillergame *sample)
+{
+	int i;
+	int	j;
+
+	i = 0;
+	sample->enemy = (sample->player == 'O') ? 'X' : 'O';
+	while (i < sample->y_cord)
+	{
+		j = 0;
+		while (j < sample->x_cord)
+		{
+			if (sample->map[i][j] == sample->enemy)
+			{
+				sample->x_enemy = j;
+				sample->y_enemy = i;
+			}
+			if (sample->map[i][j] == sample->player)
+			{
+				sample->x_player = j;
+				sample->y_player = i;
+			}
+			j++;
+		}
+		i++;
+	}
+	sample->alg = (sample->y_enemy > sample->y_player) ? 1 : 0;
+}
+
+int		ft_take_map(t_fillergame *sample)
+{
+	int i;
+	char *str;
+
+	i = 0;
+	if (!sample->map)
+	{
+		sample->map = ft_strnew_upd1(sample->y_cord, sample->x_cord);
+		CHECK(sample->map); // or return (-1);
+	}
+	get_next_line(0, &str);
+	while (i <= sample->y_cord)
+	{
+		get_next_line(0, &str);
+		if (ft_isdgit(str[0]))
+			sample->map[i] = ft_strdup(str + 4);
+		else
+			ft_take_symb(sample, str);
+		i++;
+	}
+	if (sample->x_enemy == 0 && sample->y_enemy && \
+			sample->x_player == 0 && sample->y_player == 0)
+		ft_take_position(sample);
+	return (0);
+}
