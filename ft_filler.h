@@ -15,7 +15,7 @@
 
 # include "libft/libft.h"
 
-typedef struct s_filler
+typedef struct s_fillergame
 {
 	int		move_x;
 	int		move_y;
@@ -34,6 +34,6 @@ typedef struct s_filler
 	int		invalid;
 	int		ko;
 	int		alg;
-}				t_filler;
+}				t_fillergame;
 
 #endif
