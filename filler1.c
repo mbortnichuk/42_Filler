@@ -97,7 +97,7 @@ int		ft_take_map(t_fillergame *sample)
 	while (i <= sample->y_cord)
 	{
 		get_next_line(0, &str);
-		if (ft_isdgit(str[0]))
+		if (ft_isdigit(str[0]))
 			sample->map[i] = ft_strdup(str + 4);
 		else
 			ft_take_symb(sample, str);

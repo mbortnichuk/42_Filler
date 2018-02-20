@@ -10,4 +10,42 @@
 #                                                                              #
 # **************************************************************************** #
 
+NAME = mbortnic.filler
 
+SRC = filler1.c \
+		main.c
+
+INC = ft_filler.h
+
+CFLAGS = -Wall -Wextra -Werror -I
+
+OBJ = $(SRC:.c=.o)
+
+RM = rm -f
+
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	make -C ./libft/
+	gcc -o $(NAME) $(CFLAGS) $(OBJ) libft/libft.a
+	@ echo "\033[32;1mfiller is ready\033[0m"
+
+clean:
+	make -C clean ./libft/
+	$(RM) $(OBJ)
+	@ echo "\033[33;1mobj files are removed\033[0m"
+
+fclean:
+	make -C fclean ./libft/
+	$(RM) $(NAME)
+	@ echo "\033[31;m$(NAME) is deleted\033[0m"
+
+re: fclean all
+	@ echo "\033[36;1mre performed\033[0m"
+
+norm:
+	@ echo "\033[35;1mWait a sec.\033[0m"
+	norminette *.c *.h ./libft/*.c *.h
+	@ echo "\033[35;1mnorminette check finished\033[0m"
+
+.PHONY: all clean fclean re norm
