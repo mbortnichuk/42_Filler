@@ -44,12 +44,15 @@ $(LIBD)libft.a:
 clean:
 	make clean -C $(LIBD)
 	$(RM) $(OBJ)
+	@ echo "\033[33;1mobj files are removed\033[0m"
 
 fclean: clean
 	make fclean -C $(LIBD)
 	$(RM) $(NAME)
+	@ echo "\033[31;m$(NAME) is deleted\033[0m"
 
 re: fclean all
+	@ echo "\033[36;1mre performed\033[0m"
 
 norm:
 	@ echo "\033[35;1mWait a sec.\033[0m"
