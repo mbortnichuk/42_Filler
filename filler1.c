@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_filler.h"
+#include "./libft/libft.h"
 
 char	**ft_strnew_upd1(int x, int y)
 {

@@ -52,10 +52,39 @@ typedef struct s_figure
 	int		finaly;
 }				t_figure;
 
+/*
+** ft_utils.c
+*/
+
 void	ft_player_config(t_map *map);
 void	ft_take_player(t_map *map);
 void	ft_strategic_pos(t_map *map, char *str, int i);
 void	ft_take_map(t_map *map);
 void	ft_mapsize(t_map *map, char *str);
+
+/*
+** ft_utils2.c
+*/
+int		ft_last_chance(t_figure *figure, t_map *map);
+int		ft_get_resutl(t_map *map, t_figure *figure);
+void	ft_res_to_output(t_map *map, t_figure *figure);
+
+/*
+** ft_utils3.c
+*/
+int		ft_can_be_placed_v2(t_figure *figure, int counter, int i, int j);
+int		ft_can_be_placed(t_map *map, t_figure *figure, int i, int j);
+
+/*
+** ft_piece.c
+*/
+void	ft_figuresize(t_figure *figure);
+void	ft_take_figure(t_figure *figure);
+void	ft_take_figure_size(t_figure *figure, char *str);
+
+/*
+** main.c
+*/
+void	ft_struct_initiation(t_map *map, t_figure *figure);
 
 #endif

@@ -12,7 +12,7 @@
 
 #include "ft_filler.h"
 
-
+// ft_wich_player
 void	ft_player_config(t_map *map)
 {
 	if (map->player == 1)
@@ -26,7 +26,7 @@ void	ft_player_config(t_map *map)
 		map->enemy = "Oo";
 	}
 }
-
+//ft_get_player
 void	ft_take_player(t_map *map)
 {
 	char	*str;
@@ -43,9 +43,10 @@ void	ft_take_player(t_map *map)
 	free(&str);
 }
 
+//ft_get_strat_pos
 void	ft_strategic_pos(t_map *map, char *str, int i)
 {
-	int			i;
+	int			k;
 	static int	j;
 
 	if (j == map->y_cord)
@@ -54,24 +55,25 @@ void	ft_strategic_pos(t_map *map, char *str, int i)
 	while (++j < (map->y_cord))
 	{
 		i = 0;
-		while (++i < (map->x_cord))
+		while (++k < (map->x_cord))
 		{
-			if ((map->map[j][i] == map->enemy[0] || \
-				map->map[j][i] == map->enemy[1]))
+			if ((map->map[j][k] == map->enemy[0] || \
+				map->map[j][k] == map->enemy[1]))
 			{
-				map->x_enemy = i;
+				map->x_enemy = k;
 				map->y_enemy = j;
 			}
-			if ((map->[j][i] == map->me[0] || \
-				map->map[j][i] == map->me[1]))
+			if ((map->map[j][k] == map->me[0] || \
+				map->map[j][k] == map->me[1]))
 			{
-				map->x_me = i;
-				map->y->me = j;
+				map->x_me = k;
+				map->y_me = j;
 			}
 		}
 	}
 }
 
+//ft_get_map
 void	ft_take_map(t_map *map)
 {
 	int		i;
@@ -92,6 +94,7 @@ void	ft_take_map(t_map *map)
 	ft_strategic_pos(map, str, i);
 }
 
+//ft_get_map_size
 void	ft_mapsize(t_map *map, char *str)
 {
 	int		i;
