@@ -22,7 +22,7 @@ void	ft_struct_initation(t_map *map, t_figure *figure)
 	map->y_me = 0;
 	map->x_cord = 0;
 	map->y_cord = 0;
-	figure->contact = 0;
+	figure->connection = 0;
 	figure->x_first = 0;
 	figure->x_last = 0;
 	figure->y_first = 0;

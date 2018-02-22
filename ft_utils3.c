@@ -52,3 +52,30 @@ int		ft_can_be_placed(t_map *map, t_figure *figure, int i, int j)
 		return (0);
 	return (1);
 }
+
+//ft_get_contact
+void	ft_take_connection(t_map *map, t_figure *figure)
+{
+	int i;
+	int j;
+
+	i = 2;
+	while (++i < map->y_cord - 3)
+	{
+		j = 2;
+		while (++j < map->x_cord - 3)
+		{
+			if (map->map[i][j] == map->me[0] || map->map[i][j] == map->me[1])
+			{
+				if (map->map[i][j + 3] == map->enemy[0] || map->map[i][j - 3] == map->enemy[0] || \
+					map->map[i + 3][j] == map->enemy[0] || map->map[i - 3][j] == map->enemy[0] || \
+					map->map[i][j + 3] == map->enemy[1] || map->map[i][j - 3] == map->enemy[1] || \
+					map->map[i + 3][j] == map->enemy[1] || map->map[i - 3][j] == map->enemy[1])
+				{
+					figure->connection = 1;
+					return ;
+				}
+			}
+		}
+	}
+}

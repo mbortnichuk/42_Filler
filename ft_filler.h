@@ -36,8 +36,8 @@ typedef struct s_map
 typedef struct s_figure
 {
 	char	**figure;
-	int		contact;
-	int		contact_nb;
+	int		connection;
+	int		connection_nb;
 	int		x_size;
 	int		y_size;
 	int		x_size_real;
@@ -74,6 +74,7 @@ void	ft_res_to_output(t_map *map, t_figure *figure);
 */
 int		ft_can_be_placed_v2(t_figure *figure, int counter, int i, int j);
 int		ft_can_be_placed(t_map *map, t_figure *figure, int i, int j);
+void	ft_take_connection(t_map *map, t_figure *figure);
 
 /*
 ** ft_piece.c
