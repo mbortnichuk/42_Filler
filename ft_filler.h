@@ -55,7 +55,13 @@ typedef struct s_figure
 /*
 ** ft_utils.c
 */
+int		ft_last_chance(t_figure *figure, t_map *map);
+int		ft_get_resutl(t_map *map, t_figure *figure);
+void	ft_res_to_output(t_map *map, t_figure *figure);
 
+/*
+** ft_utils2.c
+*/
 void	ft_player_config(t_map *map);
 void	ft_take_player(t_map *map);
 void	ft_strategic_pos(t_map *map, char *str, int i);
@@ -63,25 +69,33 @@ void	ft_take_map(t_map *map);
 void	ft_mapsize(t_map *map, char *str);
 
 /*
-** ft_utils2.c
-*/
-int		ft_last_chance(t_figure *figure, t_map *map);
-int		ft_get_resutl(t_map *map, t_figure *figure);
-void	ft_res_to_output(t_map *map, t_figure *figure);
-
-/*
-** ft_utils3.c
+** ft_canbeplaced.c
 */
 int		ft_can_be_placed_v2(t_figure *figure, int counter, int i, int j);
 int		ft_can_be_placed(t_map *map, t_figure *figure, int i, int j);
+int		ft_connection_amount(t_figure *figure, t_map *map, int x, int y);
 void	ft_take_connection(t_map *map, t_figure *figure);
 
 /*
-** ft_piece.c
+** ft_figure.c
 */
 void	ft_figuresize(t_figure *figure);
 void	ft_take_figure(t_figure *figure);
 void	ft_take_figure_size(t_figure *figure, char *str);
+
+/*
+** ft_algorithms.c
+*/
+int		ft_first(t_figure *figure, t_map *map);
+int		ft_second(t_figure *figure, t_map *map);
+int		ft_third2(t_map *map, t_figure *figure, int connection_nb);
+int		ft_third(t_figure *figure, t_map *map);
+
+/*
+** ft_game.c
+*/
+int		ft_small_gameboard(t_figure *figure, t_map *map);
+int		ft_game(t_figure *figure, t_map *map);
 
 /*
 ** main.c

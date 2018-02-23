@@ -12,10 +12,12 @@
 
 NAME = mbortnic.filler
 
-SRC = ft_piece.c \
-		ft_utils.c \
+SRC = ft_utils.c \
 		ft_utils2.c \
-		ft_utils3.c \
+		ft_figure.c \
+		ft_canbeplaced.c \
+		ft_algorithms.c \
+		ft_game.c \
 		main.c
 
 INC = ft_filler.h

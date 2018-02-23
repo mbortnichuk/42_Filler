@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utils3.c                                        :+:      :+:    :+:   */
+/*   ft_canbeplaced.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbortnic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -51,6 +51,35 @@ int		ft_can_be_placed(t_map *map, t_figure *figure, int i, int j)
 	if (ft_can_be_placed_v2(figure, counter, i, j) == 0)
 		return (0);
 	return (1);
+}
+
+//ft_count_contact
+int		ft_connection_amount(t_figure *figure, t_map *map, int x, int y)
+{
+	int i;
+	int j;
+	int k;
+
+	i = -1;
+	figure->connection_nb = 0;
+	while (++i < figure->y_size)
+	{
+		j = -1;
+		while (++j < figure->x_size)
+			if (figure->figure[i][j] == '*')
+			{
+				k = 0;
+				while (++k < 4)
+					if ((j + x + k) < map->x_cord && (j + x - k) > 0 && \
+						(i + y + k) < map->y_cord && (j + y - k) > 0)
+						if (map->map[i + y][j + x + k] == map->enemy[0] || \
+							map->map[i + y][j + x - k] == map->enemy[0] || \
+							map->map[i + y + k][j + x] == map->enemy[0] || \
+							map->map[i + y - k][j + x] == map->enemy[0])
+							figure->connection_nb = figure->connection_nb + (4 - k);
+			}
+	}
+	return (figure->connection_nb);
 }
 
 //ft_get_contact

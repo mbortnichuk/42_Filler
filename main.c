@@ -45,6 +45,14 @@ int main(void)
 	while (1)
 	{
 		ft_res_to_output(map, figure);
+		if (ft_game(figure, map) == 1)
+		{
+			if (ft_last_chance(figure, map) == 1)
+			{
+				ft_res_to_output(map, figure);
+				exit(1);
+			}
+		}
 	}
 	return (0);
 }
