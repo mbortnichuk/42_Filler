@@ -87,7 +87,9 @@ void	ft_take_figure_size(t_figure *figure, char *str);
 ** ft_algorithms.c
 */
 int		ft_first(t_figure *figure, t_map *map);
+int		ft_first2(t_figure *figure, t_map *map);
 int		ft_second(t_figure *figure, t_map *map);
+int		ft_second2(t_figure *figure, t_map *map);
 int		ft_third2(t_map *map, t_figure *figure, int connection_nb);
 int		ft_third(t_figure *figure, t_map *map);
 

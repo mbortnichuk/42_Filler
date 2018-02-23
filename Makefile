@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = mbortnic.filler
+NAME = resources/players/mbortnic.filler
 
 SRC = ft_utils.c \
 		ft_utils2.c \

@@ -39,6 +39,33 @@ int		ft_first(t_figure *figure, t_map *map)
 	return (1);
 }
 
+//ft_algo1_2
+int		ft_first2(t_figure *figure, t_map *map)
+{
+	int i;
+	int j;
+	int result;
+
+	i = -1;
+	result = 0;
+	figure->finaly = 0;
+	figure->finalx = 0;
+	while (++i < map->y_cord)
+	{
+		j = -1;
+		while (++j < map->x_cord)
+		{
+			result = ft_can_be_placed(map, figure, i, j);
+			if (result == 0)
+			{
+				ft_res_to_output(map, figure);
+				return (0);
+			}
+		}
+	}
+	return (1);
+}
+
 //ft_algo2
 int		ft_second(t_figure *figure, t_map *map)
 {
@@ -64,6 +91,34 @@ int		ft_second(t_figure *figure, t_map *map)
 		 	j--;
 		 }
 		 i--;
+	}
+	return (1);
+}
+
+//ft_algo2_2
+int		ft_second2(t_figure *figure, t_map *map)
+{
+	int i;
+	int j;
+	int result;
+
+	result = 0;
+	i = map->y_cord;
+	figure->finaly = 0;
+	figure->finalx = 0;
+	while (i > 0)
+	{
+		j = -1;
+		while (++j < map->x_cord)
+		{
+			result = ft_can_be_placed(map, figure, i, j);
+			if (result == 0)
+			{
+				ft_res_to_output(map, figure);
+				return (0);
+			}
+		}
+		i--;
 	}
 	return (1);
 }

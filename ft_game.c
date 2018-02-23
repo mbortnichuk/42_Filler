@@ -22,6 +22,9 @@ int		ft_small_gameboard(t_figure *figure, t_map *map)
 			if (ft_second(figure, map) == 1)
 				return (1);
 		}
+		else if (map->x_me >= (map->x_cord / 2))
+				if (ft_second2(figure, map) == 1)
+					return (1);
 	}
 	else if (map->y_me >= (map->y_cord / 2))
 	{
@@ -30,6 +33,9 @@ int		ft_small_gameboard(t_figure *figure, t_map *map)
 			if (ft_first(figure, map) == 1)
 				return (1);
 		}
+		else if (map->x_me >= (map->x_cord / 2))
+				if (ft_first2(figure, map) == 1)
+					return (1);
 	}
 	return (0);
 }
