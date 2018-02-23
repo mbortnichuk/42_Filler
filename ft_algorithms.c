@@ -163,15 +163,3 @@ int		ft_third(t_figure *figure, t_map *map)
 	}
 	return (ft_third2(map, figure, connection_nb));
 }
-
-
-
-
-
-
-
-
-
-
-
-

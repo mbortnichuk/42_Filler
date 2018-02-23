@@ -77,10 +77,10 @@ void	ft_take_figure_size(t_figure *figure, char *str)
 	while (str[i] != '\0')
 	{
 		temp = 0;
-		while (ft_isdigit(str[i]) == 1 && str[i])
+		while (ft_is_digit(str[i]) == 0 && str[i])
 		{
 			temp = temp + (str[i] - '0');
-			if (ft_isdigit(str[i + 1]) == 1)
+			if (ft_is_digit(str[i + 1]) == 0)
 				temp = temp * 10;
 			i++;
 		}

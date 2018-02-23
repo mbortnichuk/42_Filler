@@ -80,17 +80,16 @@ void	ft_take_map(t_map *map)
 	int		i;
 	char	*str;
 
-	i = 0;
+	i = -1;
 	get_next_line(0, &str);
 	free(&str);
 	map->map = (char**)malloc(sizeof(char*) * (map->y_cord + 1));
 	// CHECK(map->map);
-	while (i <= (map->y_cord - 1))
+	while (++i <= (map->y_cord - 1))
 	{
 		get_next_line(1, &str);
 		map->map[i] = ft_strdup((const char*)(&str[4]));
 		free(&str);
-		i++;
 	}
 	ft_strategic_pos(map, str, i);
 }
@@ -107,10 +106,10 @@ void	ft_mapsize(t_map *map, char *str)
 	while (str[i])
 	{
 		temp = 0;
-		while (ft_isdigit(str[i]) == 1 && str[i])
+		while (ft_is_digit(str[i]) == 0 && str[i])
 		{
 			temp = temp + (str[i] - '0');
-			if (ft_isdigit(str[i + 1]) == 1)
+			if (ft_is_digit(str[i + 1]) == 0)
 				temp = temp * 10;
 			i++;
 		}

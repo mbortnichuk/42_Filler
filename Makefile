@@ -18,6 +18,7 @@ SRC = ft_utils.c \
 		ft_canbeplaced.c \
 		ft_algorithms.c \
 		ft_game.c \
+		ft_connection.c \
 		main.c
 
 INC = ft_filler.h

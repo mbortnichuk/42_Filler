@@ -55,6 +55,7 @@ typedef struct s_figure
 /*
 ** ft_utils.c
 */
+int		ft_is_digit(int c);
 int		ft_last_chance(t_figure *figure, t_map *map);
 int		ft_get_resutl(t_map *map, t_figure *figure);
 void	ft_res_to_output(t_map *map, t_figure *figure);
@@ -84,6 +85,12 @@ void	ft_take_figure(t_figure *figure);
 void	ft_take_figure_size(t_figure *figure, char *str);
 
 /*
+** ft_connection.c
+*/
+int		ft_go_to_target(t_figure *figure, t_map *map);
+int		ft_go_to_target2(t_figure *figure, t_map *map);
+
+/*
 ** ft_algorithms.c
 */
 int		ft_first(t_figure *figure, t_map *map);
@@ -97,6 +104,7 @@ int		ft_third(t_figure *figure, t_map *map);
 ** ft_game.c
 */
 int		ft_small_gameboard(t_figure *figure, t_map *map);
+int		ft_big_gameboard(t_figure *figure, t_map *map);
 int		ft_game(t_figure *figure, t_map *map);
 
 /*

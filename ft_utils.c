@@ -12,6 +12,13 @@
 
 #include "ft_filler.h"
 
+int		ft_is_digit(int c)
+{
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
+}
+
 //ft_last_try
 int		ft_last_chance(t_figure *figure, t_map *map)
 {

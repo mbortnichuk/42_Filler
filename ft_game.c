@@ -40,12 +40,40 @@ int		ft_small_gameboard(t_figure *figure, t_map *map)
 	return (0);
 }
 
+//ft_big_map
+int		ft_big_gameboard(t_figure *figure, t_map *map)
+{
+	int result;
+
+	ft_take_connection(map, figure);
+	if (figure->connection == 0)
+	{
+		if (map->y_me < map->y_enemy)
+		{
+			if (ft_go_to_target(figure, map) == 1)
+				return (1);
+		}
+		else if (map->y_me >= map->y_enemy)
+		{
+			if (ft_go_to_target2(figure, map) == 1)
+				return (1);
+		}
+	}
+	else
+	{
+		result = ft_third(figure, map);
+		if (result == 0)
+			return (1);
+	}
+	return (0);
+}
+
 //ft_play
 int		ft_game(t_figure *figure, t_map *map)
 {
 	if (map->y_cord <= 19)
-		return (ft_small_gameboard(figure, map)); //
-	//else if (map->y_cord >= 20)
-	//	return (ft_big_gameboard(figure, map)); // in work
+		return (ft_small_gameboard(figure, map));
+	else if (map->y_cord >= 20)
+		return (ft_big_gameboard(figure, map)); // in work
 	return (0);
 }
