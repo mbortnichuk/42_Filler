@@ -71,9 +71,9 @@ int		ft_big_gameboard(t_figure *figure, t_map *map)
 //ft_play
 int		ft_game(t_figure *figure, t_map *map)
 {
-	if (map->y_cord <= 19)
+	if (map->y_cord < 20)
 		return (ft_small_gameboard(figure, map));
 	else if (map->y_cord >= 20)
-		return (ft_big_gameboard(figure, map)); // in work
+		return (ft_big_gameboard(figure, map));
 	return (0);
 }

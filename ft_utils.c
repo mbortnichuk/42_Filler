@@ -26,7 +26,7 @@ int		ft_last_chance(t_figure *figure, t_map *map)
 	int j;
 	int result;
 
-	i = 0;
+	i = -1;
 	result = 0;
 	figure->finaly = 0;
 	figure->finalx = 0;
@@ -61,6 +61,7 @@ void	ft_res_to_output(t_map *map, t_figure *figure)
 int		ft_get_result(t_map *map, t_figure *figure)
 {
 	char	*str;
+
 	figure->figure = NULL;
 	while (get_next_line(0, &str) > 0)
 	{

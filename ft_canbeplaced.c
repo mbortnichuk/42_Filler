@@ -33,9 +33,9 @@ int		ft_can_be_placed(t_map *map, t_figure *figure, int i, int j)
 
 	ii = -1;
 	counter = 0;
-	if (i + figure->y_size > map->y_cord || jj + figure->x_size > map->x_cord)
+	if (i + figure->y_size > map->y_cord || j + figure->x_size > map->x_cord)
 		return (1);
-	while (++ii <= (figure->y_size - 1))
+	while (++jj <= (figure->y_size - 1))
 	{
 		jj = -1;
 		while (++jj <= (figure->x_size - 1))
@@ -54,7 +54,7 @@ int		ft_can_be_placed(t_map *map, t_figure *figure, int i, int j)
 }
 
 //ft_count_contact
-int		ft_connection_amount(t_figure *figure, t_map *map, int x, int y)
+int		ft_connection_amount(t_figure *figure, t_map *map, int y, int x)
 {
 	int i;
 	int j;

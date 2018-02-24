@@ -54,5 +54,8 @@ int main(void)
 			}
 		}
 	}
+	free(figure->figure);
+	free(map);
+	free(figure);
 	return (0);
 }

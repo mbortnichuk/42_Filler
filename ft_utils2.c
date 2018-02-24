@@ -55,7 +55,7 @@ void	ft_strategic_pos(t_map *map, char *str, int i)
 	j = 0;
 	while (++j < (map->y_cord))
 	{
-		i = 0;
+		k = 0;
 		while (++k < (map->x_cord))
 		{
 			if ((map->map[j][k] == map->enemy[0] || \
@@ -87,7 +87,7 @@ void	ft_take_map(t_map *map)
 	// CHECK(map->map);
 	while (++i <= (map->y_cord - 1))
 	{
-		get_next_line(1, &str);
+		get_next_line(0, &str);
 		map->map[i] = ft_strdup((const char*)(&str[4]));
 		free(&str);
 	}

@@ -28,8 +28,8 @@ typedef struct s_map
 	int		x_enemy;
 	int		y_enemy;
 	void	*victory;
-	int		x_first_pos;
-	int		y_first_pos;
+	// int		x_first_pos;
+	// int		y_first_pos;
 	char	*res;
 }				t_map;
 
@@ -74,7 +74,7 @@ void	ft_mapsize(t_map *map, char *str);
 */
 int		ft_can_be_placed_v2(t_figure *figure, int counter, int i, int j);
 int		ft_can_be_placed(t_map *map, t_figure *figure, int i, int j);
-int		ft_connection_amount(t_figure *figure, t_map *map, int x, int y);
+int		ft_connection_amount(t_figure *figure, t_map *map, int y, int x);
 void	ft_take_connection(t_map *map, t_figure *figure);
 
 /*

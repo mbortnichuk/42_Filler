@@ -148,7 +148,7 @@ int		ft_third(t_figure *figure, t_map *map)
 	i = map->y_cord - (figure->y_size - figure->y_last);
 	while (--i >= 0)
 	{
-		j = map->y_cord - (figure->x_size - figure->x_last);
+		j = map->x_cord - (figure->x_size - figure->x_last);
 		while (--j >= 0)
 			if (ft_can_be_placed(map, figure, i, j) == 0)
 			{

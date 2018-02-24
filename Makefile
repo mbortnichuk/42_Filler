@@ -52,6 +52,7 @@ clean:
 fclean: clean
 	make fclean -C $(LIBD)
 	$(RM) $(NAME)
+	$(RM) resources/filler.trace #DELETE AFTER
 	@ echo "\033[31;m$(NAME) is deleted\033[0m"
 
 re: fclean all
