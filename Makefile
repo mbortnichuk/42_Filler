@@ -12,14 +12,7 @@
 
 NAME = resources/players/mbortnic.filler
 
-SRC = ft_utils.c \
-		ft_utils2.c \
-		ft_figure.c \
-		ft_canbeplaced.c \
-		ft_algorithms.c \
-		ft_game.c \
-		ft_connection.c \
-		main.c
+SRC = main.c
 
 INC = ft_filler.h
 
