@@ -19,11 +19,11 @@ int		main(void)
 
 	game = (t_filler*)malloc(sizeof(t_filler));
 	CHECK(game);
-	get_next_line(0. &str);
+	get_next_line(0, &str);
 	game->player = (ft_atoi(str + 10) == 1) ? 'O' : 'X';
 	while (1)
 	{
-		get_next_line(0, str);
+		get_next_line(0, &str);
 		game->map_y = ft_atoi(&str[8]);
 		game->map_x = ft_atoi(&str[11]);
 		//
