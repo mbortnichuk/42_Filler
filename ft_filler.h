@@ -44,5 +44,10 @@ int		ft_read_figure(char *str, t_filler *game);
 char	**ft_malloc_tab(size_t x, size_t y);
 int		ft_read_map(t_filler *game);
 
+int		to_down_l(t_filler *game);
+int		to_down_r(t_filler *game);
+int		to_up_l(t_filler *game);
+int		to_up_r(t_filler *game);
+int		ft_moves(t_filler *game);
 
 #endif

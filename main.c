@@ -14,6 +14,10 @@
 
 //47  65  54
 
+/*
+** Checking given token.
+*/
+
 int		ft_validate_figs(int i, int k, t_filler *game)
 {
 	int superposition;
@@ -51,6 +55,10 @@ int		ft_try_fig(int i, int k, t_filler *game)
 	else
 		return (ft_validate_figs(i, k, game));
 }
+
+/*
+** Pushing given token forward.
+*/
 
 void	ft_make_move(t_filler *game)
 {
@@ -108,6 +116,10 @@ void	ft_take_pos(t_filler *game)
 	game->log = (game->enemy_y > game->player_y) ? 1 : 0;
 }
 
+/*
+** Reading given figure.
+*/
+
 int		ft_read_figure(char *str, t_filler *game)
 {
 	int i;
@@ -150,6 +162,10 @@ char	**ft_malloc_tab(size_t x, size_t y)
 	return (tab1);
 }
 
+/*
+** Reading map.
+*/
+
 int		ft_read_map(t_filler *game)
 {
 	char	*str;
@@ -175,6 +191,10 @@ int		ft_read_map(t_filler *game)
 	return (0);
 }
 
+/*
+** Driver function to run our program.
+*/
+
 int		main(void)
 {
 	t_filler	*game;
@@ -183,16 +203,16 @@ int		main(void)
 	game = (t_filler*)malloc(sizeof(t_filler));
 	CHECK(game);
 	get_next_line(0, &str);
-	game->player = (ft_atoi(str + 10) == 1) ? 'O' : 'X';
+	game->player = (ft_atoi(str + '\n') == 1) ? 'O' : 'X';
 	while (1)
 	{
 		get_next_line(0, &str);
 		game->map_y = ft_atoi(&str[8]);
 		game->map_x = ft_atoi(&str[11]);
 		ft_read_map(game);
-		// if (logic(game) == 0)
-		// 	game->ko = 1;
-		// ft_make_move(game);
+		if (ft_moves(game) == 0)
+			game->ko = 1;
+		ft_make_move(game);
 		if (game->endgame == 1)
 			break ;
 	}
