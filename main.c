@@ -32,12 +32,12 @@ int		ft_validate_figs(int i, int k, t_filler *game)
 		while (x < game->fig_x)
 		{
 			if ((game->map[i + y][k + x] == game->player || \
-					game->map[i + y][k + x] == game->player + ' ') && \
+					game->map[i + y][k + x] == game->player + 32) && \
 					game->figure[y][x] == '*')
 				superposition++;
 			if ((game->map[i + y][k + x] == game->enemy || \
-					game->map[i + y][k + x] == game->enemy + ' ') && \
-				game->figure[x][y] == '*')
+					game->map[i + y][k + x] == game->enemy + 32) && \
+					game->figure[x][y] == '*')
 				return (0);
 			x++;
 		}
@@ -74,16 +74,20 @@ void	ft_make_move(t_filler *game)
 	{
 		game->endgame = 1;
 		ft_putnbr(game->y_move);
-		write(1, " ", 1);
+		ft_putchar(' ');
+		// write(1, " ", 1);
 		ft_putnbr(game->x_move);
-		write(1, "\n", 1);
+		ft_putchar('\n');
+		// write(1, "\n", 1);
 	}
 	else
 	{
 		ft_putnbr(game->y_move);
-		write(1, " ", 1);
+		ft_putchar(' ');
+		// write(1, " ", 1);
 		ft_putnbr(game->x_move);
-		write(1, "\n", 1);
+		ft_putchar('\n');
+		// write(1, "\n", 1);
 	}
 }
 
@@ -183,11 +187,11 @@ int		ft_read_map(t_filler *game)
 			game->map[i] = ft_strdup(str + 4);
 		else
 			ft_read_figure(str, game);
-		if (game->enemy_x == 0 && game->enemy_y == 0 && \
+		i++;		
+	}
+	if (game->enemy_x == 0 && game->enemy_y == 0 && \
 				game->player_x == 0 && game->player_y == 0)
 			ft_take_pos(game);
-		
-	}
 	return (0);
 }
 
@@ -201,9 +205,10 @@ int		main(void)
 	char		*str;
 
 	game = (t_filler*)malloc(sizeof(t_filler));
+	//game = ft_memalloc(sizeof(t_filler));
 	CHECK(game);
 	get_next_line(0, &str);
-	game->player = (ft_atoi(str + '\n') == 1) ? 'O' : 'X';
+	game->player = (ft_atoi(str + 10) == 1) ? 'O' : 'X';
 	while (1)
 	{
 		get_next_line(0, &str);
