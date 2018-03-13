@@ -22,7 +22,7 @@ typedef struct	s_filler
 	char	**map;
 	int		map_x;
 	int		map_y;
-	char	*figure;
+	char	**figure;
 	int		fig_x;
 	int		fig_y;
 	int		player_x;
@@ -31,9 +31,18 @@ typedef struct	s_filler
 	int		enemy_y;
 	int		x_move;
 	int		y_move;
-	int		err;
+	int		log;
 	int		endgame;
 	int		ko;
 }				t_filler;
+
+int		ft_validate_figs(int i, int k, t_filler *game);
+int		ft_try_fig(int i, int k, t_filler *game);
+void	ft_make_move(t_filler *game);
+void	ft_take_pos(t_filler *game);
+int		ft_read_figure(char *str, t_filler *game);
+char	**ft_malloc_tab(size_t x, size_t y);
+int		ft_read_map(t_filler *game);
+
 
 #endif
