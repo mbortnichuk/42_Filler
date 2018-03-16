@@ -23,7 +23,6 @@
 # define LINE 1
 
 # define BUFF_SIZE 8
-# define FDS 4864
 
 # define CHECK(x) if (!x) return (0);
 
@@ -103,6 +102,15 @@ int				ft_list_size(t_list *beginning);
 unsigned char	ft_swap_bits(unsigned char octet);
 int				ft_sqrt(int nb);
 int				ft_isnumber(char *str);
+void			ft_lstaddback(t_list **alst, t_list *new);
+t_list			*ft_create_node(void *content);
+
+typedef	struct	s_gnl
+{
+	int				fd;
+	char			*str;
+	struct s_gnl	*next;
+}				t_gnl;
 
 int				get_next_line(const int fd, char **line);
 

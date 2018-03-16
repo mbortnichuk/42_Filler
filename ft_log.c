@@ -12,112 +12,98 @@
 
 #include "ft_filler.h"
 
-int		to_down_l(t_filler *game)
+/*
+** Algos for player to move.
+*/
+
+int		ft_down_l(t_filler *game)
 {
-	int i;
-	int k;
+	int		i;
+	int		j;
 
 	i = game->map_y;
 	while (i > 0)
 	{
-		k = 0;
-		while (k < game->map_x)
+		j = -1;
+		while (++j < game->map_x)
 		{
-			if (ft_try_fig(i, k, game) == 1)
+			if (ft_try_fig(i, j, game) == 1)
 			{
-				game->x_move = k;
+				game->x_move = j;
 				game->y_move = i;
 				return (1);
 			}
-			k++;
 		}
 		i--;
 	}
 	return (0);
 }
 
-int		to_down_r(t_filler *game)
+int		ft_down_r(t_filler *game)
 {
-	int i;
-	int k;
+	int		i;
+	int		j;
 
 	i = game->map_y;
 	while (i > 0)
 	{
-		k = game->map_x;
-		while (k > 0)
+		j = game->map_x;
+		while (j > 0)
 		{
-			if (ft_try_fig(i, k, game) == 1)
+			if (ft_try_fig(i, j, game) == 1)
 			{
-				game->x_move = k;
+				game->x_move = j;
 				game->y_move = i;
 				return (1);
 			}
-			k--;
+			j--;
 		}
 		i--;
 	}
 	return (0);
 }
 
-int		to_up_l(t_filler *game)
+int		ft_up_l(t_filler *game)
 {
-	int i;
-	int k;
+	int		i;
+	int		j;
 
-	i = 0;
-	while (i < game->map_y)
+	i = -1;
+	while (++i < game->map_y)
 	{
-		k = 0;
-		while (k < game->map_x)
+		j = -1;
+		while (++j < game->map_x)
 		{
-			if (ft_try_fig(i, k, game) == 1)
+			if (ft_try_fig(i, j, game) == 1)
 			{
-				game->x_move = k;
+				game->x_move = j;
 				game->y_move = i;
 				return (1);
 			}
-			k++;
 		}
-		i++;
 	}
 	return (0);
 }
 
-int		to_up_r(t_filler *game)
+int		ft_up_r(t_filler *game)
 {
-	int i;
-	int k;
+	int		i;
+	int		j;
 
-	i = 0;
-	while (i < game->map_y)
+	i = -1;
+	while (++i < game->map_y)
 	{
-		k = game->map_y;
-		while (k > 0)
+		j = game->map_x;
+		while (j > 0)
 		{
-			if (ft_try_fig(i, k, game) == 1)
+			if (ft_try_fig(i, j, game) == 1)
 			{
-				game->x_move = k;
+				game->x_move = j;
 				game->y_move = i;
 				return (1);
 			}
-			k--;
+			j--;
 		}
-		i++;
 	}
 	return (0);
-}
-
-int		ft_moves(t_filler *game)
-{
-	if (game->log == 0)
-		return (to_up_l(game));
-	else if (game->log == 1)
-		return (to_down_r(game));
-	else if (game->log == 2)
-		return (to_up_r(game));
-	else if (game->log == 3)
-		return (to_down_l(game));
-	else
-		return (0);
 }

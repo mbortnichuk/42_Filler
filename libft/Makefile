@@ -78,6 +78,8 @@ SRCS = ft_atoi.c \
 	   ft_swap_bits.c \
 	   ft_sqrt.c \
 	   ft_isnumber.c \
+	   ft_lstaddback.c \
+	   ft_create_node.c \
 	   get_next_line.c
 
 BINS = $(SRCS:.c=.o)
