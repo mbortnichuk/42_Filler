@@ -43,7 +43,7 @@ void	ft_make_move(t_filler *game)
 	}
 }
 
-int				ft_moves(t_filler *game)
+int		ft_moves(t_filler *game)
 {
 	if (game->log == 0)
 		return (ft_up_l(game));

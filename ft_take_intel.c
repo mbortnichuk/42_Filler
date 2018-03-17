@@ -16,7 +16,7 @@
 ** Reading map.
 */
 
-int	ft_take_map(t_filler *game)
+int		ft_take_map(t_filler *game)
 {
 	char	*str;
 	int		i;
@@ -46,7 +46,7 @@ int	ft_take_map(t_filler *game)
 ** Reading given figure.
 */
 
-int	ft_take_figure(char *str, t_filler *game)
+int		ft_take_figure(char *str, t_filler *game)
 {
 	int		n;
 	int		i;
@@ -62,7 +62,6 @@ int	ft_take_figure(char *str, t_filler *game)
 	{
 		game->figure = ft_malloc_tab(game->fig_y, game->fig_x);
 		CHECK(game->figure);
-
 	}
 	while (++i < game->fig_y)
 	{
@@ -76,7 +75,7 @@ int	ft_take_figure(char *str, t_filler *game)
 ** Take players positions.
 */
 
-void		ft_take_pos(t_filler *game)
+void	ft_take_pos(t_filler *game)
 {
 	int		i;
 	int		j;

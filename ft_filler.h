@@ -36,18 +36,36 @@ typedef struct	s_filler
 	int		ko;
 }				t_filler;
 
-int		ft_down_l(t_filler *game);
-int		ft_down_r(t_filler *game);
-int		ft_up_l(t_filler *game);
-int		ft_up_r(t_filler *game);
-int		ft_moves(t_filler *game);
+/*
+** ft_take_intel.c
+*/
 
-int		ft_validate_figs(int i, int k, t_filler *game);
-int		ft_try_fig(int i, int k, t_filler *game);
-void	ft_make_move(t_filler *game);
-void	ft_take_pos(t_filler *game);
-int		ft_take_figure(char *str, t_filler *game);
-char	**ft_malloc_tab(size_t x, size_t y);
-int		ft_take_map(t_filler *game);
+int				ft_take_map(t_filler *game);
+int				ft_take_figure(char *str, t_filler *game);
+void			ft_take_pos(t_filler *game);
+
+/*
+** ft_log.c
+*/
+
+int				ft_down_l(t_filler *game);
+int				ft_down_r(t_filler *game);
+int				ft_up_l(t_filler *game);
+int				ft_up_r(t_filler *game);
+
+/*
+** ft_moves.c
+*/
+
+void			ft_make_move(t_filler *game);
+int				ft_moves(t_filler *game);
+int				ft_validate_figs(int i, int k, t_filler *game);
+int				ft_try_fig(int i, int k, t_filler *game);
+
+/*
+** main.c
+*/
+
+char			**ft_malloc_tab(size_t x, size_t y);
 
 #endif

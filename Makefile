@@ -10,13 +10,13 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = resources/players/mbortnic.filler
+NAME = mbortnic.filler
 
 SRC = main.c ft_take_intel.c ft_log.c ft_moves.c
 
 INC = ft_filler.h
 
-CFLAGS = -Wall -Wextra -Werror -I.
+CFLAGS = -Wall -Wextra -Werror -I
 
 OBJ = $(SRC:.c=.o)
 
@@ -35,17 +35,17 @@ $(NAME): $(OBJ) $(LIBD)libft.a
 	gcc -I $(INC) -c $< -o $@
 
 $(LIBD)libft.a:
-	make -C $(LIBD)
+	@ make -C $(LIBD)
 
 clean:
-	make clean -C $(LIBD)
-	$(RM) $(OBJ)
-	@ echo "\033[33;1mobj files are removed\033[0m"
+	@ make clean -C $(LIBD)
+	@ $(RM) $(OBJ)
+	@ echo "\033[33;1mfiller obj files are removed\033[0m"
 
 fclean: clean
-	make fclean -C $(LIBD)
-	$(RM) $(NAME)
-	$(RM) resources/filler.trace #DELETE AFTER
+	@ make fclean -C $(LIBD)
+	@ $(RM) $(NAME)
+	$(RM) filler.trace #DELETE AFTER
 	@ echo "\033[31;m$(NAME) is deleted\033[0m"
 
 re: fclean all
@@ -53,7 +53,7 @@ re: fclean all
 
 norm:
 	@ echo "\033[35;1mWait a sec.\033[0m"
-	norminette *.c *.h ./libft/*.c *.h
+	@ norminette *.c *.h ./libft/*.c *.h
 	@ echo "\033[35;1mnorminette check finished\033[0m"
 
 .PHONY: all clean fclean re norm

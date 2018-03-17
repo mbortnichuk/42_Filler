@@ -94,11 +94,11 @@ $(NAME):
 	@ gcc $(SRCS) $(CFLAGS)
 	@ ar rc $(NAME) $(BINS)
 	@ ranlib $(NAME)
-	@ echo "\033[32;1mlibft is ready\033[0m"
+	@ echo "\033[32;1m$(NAME) is ready\033[0m"
 
 clean:
 	@ rm -f $(BINS)
-	@ echo "\033[33;1mbinary files are removed\033[0m"
+	@ echo "\033[33mlibft obj files are removed\033[0m"
 
 fclean: clean
 	@ rm -f $(NAME)
