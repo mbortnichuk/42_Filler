@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_filler.h"
+#include "../inc/ft_filler.h"
 
 /*
 ** Algos for player to move.
