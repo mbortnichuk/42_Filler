@@ -10,14 +10,34 @@
 #                                                                              #
 # **************************************************************************** #
 
-red=$(printf "\e[41m\e[30mO\e[0m")
-blue=$(printf "\e[44m\e[30mX\e[0m")
-green=$(printf "\e[43m\e[30mo\e[0m")
-magenta=$(printf "\e[45m\e[30mx\e[0m")
-yellow=$(printf "\e[33mplayer\e[0m")
+# say "Starting the game!"
+
+# red=$(printf "\033[41m\033[30mO\033[0m")
+# blue=$(printf "\033[44m\033[30mX\033[0m")
+# red2=$(printf "\033[47m\033[31mo\033[0m")
+# blue2=$(printf "\033[47m\033[34mx\033[0m")
+
+# sed "s|O|$red|g" |
+# sed "s|X|$blue|g" |
+# sed "s|x|$blue2|g" |
+# sed "/^0.. /s|o|$red2|g" |
+# sed "s|fin|player|g" 
+
+# say "Game ended!"
+
+
+
+say "Starting the game!"
+
+red=$(printf "\033[31mO\033[0m")
+blue=$(printf "\033[34mX\033[0m")
+red2=$(printf "\033[41m\033[30mo\033[0m")
+blue2=$(printf "\033[44m\033[30mx\033[0m")
 
 sed "s|O|$red|g" |
 sed "s|X|$blue|g" |
-sed "s|x|$magenta|g" |
-sed "s|o|$green|g" |
-sed "s|fin|$yellow|g"
+sed "s|x|$blue2|g" |
+sed "/^0.. /s|o|$red2|g" |
+sed "s|fin|player|g"
+
+say "Game ended!"
