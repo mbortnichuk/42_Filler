@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-say "Starting the game!"
+say -v Karen "Starting the game!"
 
 red=$(printf "\033[31mO\033[0m")
 blue=$(printf "\033[34mX\033[0m")
@@ -23,4 +23,4 @@ sed "s|x|$blue2|g" |
 sed "/^0.. /s|o|$red2|g" |
 sed "s|fin|player|g"
 
-say "Game ended!"
+say -v Karen "Game ended!"

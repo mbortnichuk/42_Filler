@@ -18,16 +18,13 @@ char	**ft_malloc_tab(size_t x, size_t y)
 	char	*tab2;
 	size_t	i;
 
-	i = 0;
+	i = -1;
 	tab1 = (char **)malloc(sizeof(char *) * y);
 	tab2 = (char *)malloc(sizeof(char) * x * y);
 	CHECK(tab1);
 	CHECK(tab2);
-	while (i < y)
-	{
+	while (++i < y)
 		tab1[i] = &tab2[i * x];
-		i++;
-	}
 	return (tab1);
 }
 
