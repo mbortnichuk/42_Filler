@@ -15,22 +15,31 @@
 
 # include "../libft/libft.h"
 
+# define PL_1 'O'
+# define PL_2 'X'
+
 typedef struct	s_filler
 {
 	char	player;
 	char	enemy;
+	\
 	char	**map;
 	int		map_x;
 	int		map_y;
+	\
 	char	**figure;
 	int		fig_x;
 	int		fig_y;
+	\
 	int		player_x;
 	int		player_y;
+	\
 	int		enemy_x;
 	int		enemy_y;
+	\
 	int		x_move;
 	int		y_move;
+	\
 	int		log;
 	int		endgame;
 	int		ko;

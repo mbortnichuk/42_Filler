@@ -31,13 +31,13 @@ int		ft_take_map(t_filler *game)
 	while (++i <= game->map_y)
 	{
 		get_next_line(0, &str);
-		if (ft_isdigit(str[0]))
+		if (str[0] >= '0' && str[0] <= '9')
 			game->map[i] = ft_strdup(str + 4);
 		else
 			ft_take_figure(str, game);
 	}
-	if (game->enemy_x == 0 && game->enemy_y == 0 &&
-			game->player_x == 0 && game->player_y == 0)
+	if (game->player_x == 0 && game->player_y == 0 && \
+			game->enemy_x == 0 && game->enemy_y == 0)
 		ft_take_pos(game);
 	return (0);
 }
@@ -54,7 +54,7 @@ int		ft_take_figure(char *str, t_filler *game)
 	n = 6;
 	i = -1;
 	game->fig_y = ft_atoi(&str[6]);
-	while (ft_isdigit(str[n]))
+	while (str[n] >= '0' && str[n] <= '9')
 		n++;
 	n++;
 	game->fig_x = ft_atoi(&str[n]);
@@ -80,22 +80,22 @@ void	ft_take_pos(t_filler *game)
 	int		i;
 	int		j;
 
+	game->enemy = (game->player == PL_1) ? PL_2 : PL_1;
 	i = -1;
-	game->enemy = (game->player == 'O') ? 'X' : 'O';
 	while (++i < game->map_y)
 	{
 		j = -1;
 		while (++j < game->map_x)
 		{
-			if (game->map[i][j] == game->enemy)
-			{
-				game->enemy_x = j;
-				game->enemy_y = i;
-			}
 			if (game->map[i][j] == game->player)
 			{
 				game->player_x = j;
 				game->player_y = i;
+			}
+			if (game->map[i][j] == game->enemy)
+			{
+				game->enemy_x = j;
+				game->enemy_y = i;
 			}
 		}
 	}

@@ -19,7 +19,7 @@ blue2=$(printf "\033[44m\033[30mx\033[0m")
 
 sed "s|O|$red|g" |
 sed "s|X|$blue|g" |
-sed "s|x|$blue2|g" |
+sed "/^0.. /s|x|$blue2|g" |
 sed "/^0.. /s|o|$red2|g" |
 sed "s|fin|player|g"
 

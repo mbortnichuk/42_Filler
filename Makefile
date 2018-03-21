@@ -16,7 +16,7 @@ SRC = src/main.c src/ft_take_intel.c src/ft_log.c src/ft_moves.c
 
 INC = inc/ft_filler.h
 
-CFLAGS = -Wall -Wextra -Werror -I
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g -I
 
 OBJ = $(SRC:.c=.o)
 

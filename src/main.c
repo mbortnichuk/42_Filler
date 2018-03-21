@@ -40,7 +40,7 @@ int		main(void)
 	game = ft_memalloc(sizeof(t_filler));
 	CHECK(game);
 	get_next_line(0, &str);
-	game->player = (ft_atoi(str + 10) == 1) ? 'O' : 'X';
+	game->player = (ft_atoi(str + 10) == 1) ? PL_1 : PL_2;
 	while (1)
 	{
 		get_next_line(0, &str);
@@ -52,6 +52,7 @@ int		main(void)
 		ft_make_move(game);
 		if (game->endgame == 1)
 			break ;
+		// while (69);
 	}
 	free(game);
 	return (0);
