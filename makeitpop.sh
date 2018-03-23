@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-# say -v Milena "Слава Украине!"
+say -v Karen "Starting the game!"
 
 red=$(printf "\033[33mO\033[0m")
 blue=$(printf "\033[36mX\033[0m")
@@ -23,4 +23,4 @@ sed "/^0.. /s|x|$blue2|g" |
 sed "/^0.. /s|o|$red2|g" |
 sed "s|fin|player|g"
 
-# say -v Milena "Героям Слава!"
+say -v Karen "Game ended!"

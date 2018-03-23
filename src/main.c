@@ -35,26 +35,29 @@ void	ft_start_clean(t_filler *game)
 
 void	ft_free_weird(t_filler *game)
 {
+	int i;
+	int j;
+
 	if (game->map)
+	{
+		i = -1;
+		while (++i < game->map_y)
 		{
-			int i = -1;
-			while (++i < game->map_y)
-			{
-				free (game->map[i]);
-			}
-			free(game->map);
-			game->map = NULL;
+			free(game->map[i]);
 		}
-		if (game->figure)
+		free(game->map);
+		game->map = NULL;
+	}
+	if (game->figure)
+	{
+		j = -1;
+		while (++j < game->fig_y)
 		{
-			int j = -1;
-			while (++j < game->fig_y)
-			{
-				free (game->figure[j]);
-			}
-			free(game->figure);
-			game->figure = NULL;
+			free(game->figure[j]);
 		}
+		free(game->figure);
+		game->figure = NULL;
+	}
 }
 
 /*

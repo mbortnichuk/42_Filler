@@ -38,9 +38,8 @@ void	ft_make_move(t_filler *game)
 	{
 		ft_putnbr(game->y_move);
 		write(1, " ", 1);
-		ft_putnbr(game->x_move);    
+		ft_putnbr(game->x_move);
 		write(1, "\n", 1);
-
 	}
 }
 
