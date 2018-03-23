@@ -24,34 +24,3 @@ sed "/^0.. /s|o|$red2|g" |
 sed "s|fin|player|g"
 
 # say -v Milena "Героям Слава!"
-
-
-# int		main(void)
-# {
-# 	char		*str;
-# 	t_filler	*game;
-
-# 	game = ft_memalloc(sizeof(t_filler));
-# 	CHECK(game);
-# 	get_next_line(0, &str);
-# 	game->player = (ft_atoi(str + 10) == 1) ? PL_1 : PL_2;
-# 	free(str);
-# 	while (42)
-# 	{
-# 		// ft_clean(game);
-# 		get_next_line(0, &str);
-# 		game->map_y = ft_atoi(&str[8]);
-# 		game->map_x = ft_atoi(&str[11]);
-# 		if (str)
-# 			ft_strdel(&str); //ios
-# 		ft_take_map(game);
-# 		if (ft_moves(game) == 0)
-# 			game->ko = 1;
-# 		ft_make_move(game);
-# 		if (game->endgame == 1)
-# 			break ;
-# 		// while (69);
-# 	}
-# 	free(game);
-# 	return (0);
-# }

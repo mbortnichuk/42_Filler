@@ -29,14 +29,10 @@ void	ft_make_move(t_filler *game)
 	if (game->ko == 1)
 	{
 		game->endgame = 1;
-				ft_putnbr(0);
+		ft_putnbr(0);
 		write(1, " ", 1);
 		ft_putnbr(0);
 		write(1, "\n", 1);
-		// ft_putnbr(game->y_move);
-		// write(1, " ", 1);
-		// ft_putnbr(game->x_move);  //vgnylyan
-		// write(1, "\n", 1);
 	}
 	else
 	{

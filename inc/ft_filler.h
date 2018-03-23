@@ -75,6 +75,7 @@ int				ft_try_fig(int i, int k, t_filler *game);
 ** main.c
 */
 
-char			**ft_malloc_tab(size_t x, size_t y);
+void			ft_free_weird(t_filler *game);
+void			ft_start_clean(t_filler *game);
 
 #endif
