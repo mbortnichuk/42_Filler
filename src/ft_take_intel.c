@@ -24,21 +24,27 @@ int		ft_take_map(t_filler *game)
 	i = -1;
 	if (!game->map)
 	{
-		game->map = ft_malloc_tab(game->map_y, game->map_x);
-		CHECK(game->map);
+		game->map = (char**)malloc(sizeof(char*) * game->map_y);
+		//CHECK(game->map);
 	}
 	get_next_line(0, &str);
+	ft_strdel(&str);
 	while (++i <= game->map_y)
 	{
 		get_next_line(0, &str);
 		if (str[0] >= '0' && str[0] <= '9')
+		{
 			game->map[i] = ft_strdup(str + 4);
+			ft_strdel(&str);
+		}
 		else
 			ft_take_figure(str, game);
+		//ft_strdel(&str); //vgnylyan
 	}
 	if (game->player_x == 0 && game->player_y == 0 && \
 			game->enemy_x == 0 && game->enemy_y == 0)
 		ft_take_pos(game);
+	//free(str); //vgnylyan
 	return (0);
 }
 
@@ -58,15 +64,17 @@ int		ft_take_figure(char *str, t_filler *game)
 		n++;
 	n++;
 	game->fig_x = ft_atoi(&str[n]);
+	free(str); //vgnylyan
 	if (!game->figure)
 	{
-		game->figure = ft_malloc_tab(game->fig_y, game->fig_x);
-		CHECK(game->figure);
+		game->figure = (char**)malloc(sizeof(char*) * game->fig_y);
+		//CHECK(game->figure);
 	}
 	while (++i < game->fig_y)
 	{
 		get_next_line(0, &str);
 		game->figure[i] = ft_strdup(str);
+		free(str);
 	}
 	return (0);
 }
